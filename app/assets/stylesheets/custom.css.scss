@@ -5,8 +5,20 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+ }
 
-  main {
+ main {
     flex: 1 0 auto;
-  }
+ }
+
+ nav {
+ 	background-color: #00c853;
+ }
+
+.page-footer {
+	background-color: #1b5e20;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+	color: #ffeb3b ;
+}
