@@ -1,34 +1,21 @@
+<!-- use grid to align the title on the center -->
 <div class="row">
 	<h2 class="center-align" >COURSES LISTING</h2>
 </div>
 
-<div class="row">
-    <div class="col s6 m6">
-      <div class="card green darken-3">
-        <div class="card-content white-text">
-          <span class="card-title activator">CS101: Course A<i class="material-icons right">more_vert</i></span>
-          <p>This is a sample course 1.</p>
-        </div>
-        <div class="card-reveal">
-      		<span class="card-title grey-text text-darken-4">CS101: Course A<i class="material-icons right">close</i></span>
-     		<p>This is a sample course. The Quick Brown Fox Jump Over The Fence.</p>
-    	</div>
-        <div class="card-action">
-          <a href="#">Info</a>
-          <a href="#">Enroll</a>
-        </div>
-      </div>
-    </div>
+<!-- add cards and have the list inside the cards -->
 
+<div class="row">
+  <% @courses.each do |c| %>
     <div class="col s6 m6">
       <div class="card green darken-3">
         <div class="card-content white-text">
-          <span class="card-title activator">CS102: Course B<i class="material-icons right">more_vert</i></span>
-          <p>This is a sample course 2.</p>
+          <span class="card-title activator"><%= c.short_name %>: <%= c.name %><i class="material-icons right">more_vert</i></span>
+          <p>This is a sample course <%= c.id %></p>
         </div>
         <div class="card-reveal">
-      		<span class="card-title grey-text text-darken-4">CS102: Course B<i class="material-icons right">close</i></span>
-     		<p>This is a sample course. The Quick Brown Fox Jump Over The Fence.</p>
+      		<span class="card-title grey-text text-darken-4"><%= c.short_name %>: <%= c.name %><i class="material-icons right">close</i></span>
+     		<p><%= c.description %></p>
     	</div>
         <div class="card-action">
           <a href="#">Info</a>
@@ -36,4 +23,6 @@
         </div>
       </div>
     </div>
+  <% end %>
 </div>
+
