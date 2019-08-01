@@ -1,3 +1,13 @@
+<% if @student.errors.any? %>
+	<%= pluralize(@student.errors.count, "error") %>
+	prohibited your profile from being created
+	<ul>
+		<%= @student.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 <!-- put the form inside a container -->
 <div class="container">
 	<!-- make the form center and inside a table -->
@@ -11,18 +21,18 @@
 				<%= form_for(@student, html: {class: "col s12"}) do |f| %>
 					<div class="row">
 				        <div class="input-field col s12">
-							<%= f.label :name, "Name" %>
 							<%= f.text_field :name, placeholder:"Enter your name", autofocus:true %>
+							<%= f.label :name, "Name" %>
 						</div>
 					</div>
 					<div class="row">
 				        <div class="input-field col s12">
-							<%= f.label :email, "Email" %>
 							<%= f.email_field :email, placeholder:"Enter your email address"%>
+							<%= f.label :email, "Email" %>
 						</div>
 					</div>
 					<div class="btn teal accent-4 waves-effect waves-light">
-						<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+						<%= f.submit "SIGN UP", :disable_with => 'Submiting...' %>
 						<i class="material-icons right">send</i>
 					</div>
 				<% end %>
