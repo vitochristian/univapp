@@ -12,6 +12,19 @@
   <body class="lime lighten-4">
     <header>
       <%= render 'layouts/navigation' %>
+        <% flash.each do |key, msg| %>
+          <div class="container">
+            <div class="row above">
+              <div class="col s12 m12 l12">
+                <div class="card-panel lime accent-4" id="fade-out-flash">
+                  <span class="white-text">  
+                    <%= msg %>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
     </header>
 
     <main>

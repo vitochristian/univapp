@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 		# condition if student obj is saved
 		if @student.save
 			# give a success message
-			flash[:success] = "You have successfully signed up"
+			flash[:notice] = "You have successfully signed up"
 			redirect_to root_path
 		# condition if it fails to save
 		else
@@ -20,6 +20,26 @@ class StudentsController < ApplicationController
 			render 'new'
 		end
 
+	end
+
+	def show
+		@student = Student.find(params[:id])
+	end
+
+	def edit
+		@student = Student.find(params[:id])
+	end
+
+	def update
+		# find the intended student
+		@student = Student.find(params[:id])
+		# collect the data from table and edit the student params
+		if @student.update(stud_params)
+			flash[:notice] = "You have successfully updated your profile"
+			redirect_to @student
+		else
+			render 'edit'
+		end
 	end
 
 	private

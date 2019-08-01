@@ -29,24 +29,24 @@
 		<div class="col s12 m12 l12">
 			<!-- add a card panel as border to the form -->
 			<div class="card-panel">
-				<h3> SIGN UP </h3>
+				<h3> EDIT PROFILE </h3>
 				<div class="row">
 				<%= form_for(@student, html: {class: "col s12"}) do |f| %>
 					<div class="row">
 				        <div class="input-field col s12">
-							<%= f.text_field :name, placeholder:"Enter your name", autofocus:true %>
+							<%= f.text_field :name, placeholder:"Update your name", autofocus:true %>
 							<%= f.label :name, "Name" %>
 						</div>
 					</div>
 					<div class="row">
 				        <div class="input-field col s12">
-							<%= f.email_field :email, placeholder:"Enter your email address"%>
+							<%= f.email_field :email, placeholder:"Update your email address"%>
 							<%= f.label :email, "Email" %>
 						</div>
 					</div>
 					<div class="btn-flat teal accent-4 waves-effect waves-light">
-						<%= f.submit "SIGN UP", :disable_with => 'Submiting...' %>
-						<i class="material-icons right">send</i>
+						<%= f.submit "EDIT", :disable_with => 'Editing...' %>
+						<i class="material-icons right">edit</i>
 					</div>
 				<% end %>
 				</div>

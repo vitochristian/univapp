@@ -18,7 +18,12 @@
 //= require turbolinks
 //= require_tree .
 
+// to load everything after turbolinks loaded
 $(document).on('turbolinks:load', function(){
+	// enable dropdown trigger
 	$(".dropdown-trigger").dropdown();
+	// enable sidenav
 	$('.sidenav').sidenav();
+	// enable fadeout for flash msg
+	$('#fade-out-flash').fadeOut(2000);
 })
