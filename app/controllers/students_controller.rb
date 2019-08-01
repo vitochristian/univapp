@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+	before_action :set_student, only: [:show, :edit, :update]
 	def index
 		@students = Student.all
 	end
@@ -23,16 +24,14 @@ class StudentsController < ApplicationController
 	end
 
 	def show
-		@student = Student.find(params[:id])
+		
 	end
 
 	def edit
-		@student = Student.find(params[:id])
+		
 	end
 
 	def update
-		# find the intended student
-		@student = Student.find(params[:id])
 		# collect the data from table and edit the student params
 		if @student.update(stud_params)
 			flash[:notice] = "You have successfully updated your profile"
@@ -43,6 +42,11 @@ class StudentsController < ApplicationController
 	end
 
 	private
+	def set_student
+		# find the intended student
+		@student = Student.find(params[:id])
+	end
+
 	# whitelist the student obj so it can be saved
 	def stud_params
 		# the parameters require obj student to exist and allowing name and email to be save to the obj later on

@@ -1,0 +1,23 @@
+<!-- search if there are any errors -->
+<!-- because this code is used throughout the projects we use obj or any other word as an object representative -->
+<% if obj.errors.any? %>
+	<div class="container">
+		<div class="row above">
+			<div class="col s12 m12 l12">
+				<div class="card-panel red accent-4">
+					<span class="white-text">
+						<!-- to make the word error plural -->
+						<strong><%= pluralize(obj.errors.count, "error") %></strong>
+						prohibited your profile from being created
+						<ul>
+							<!-- iterate through the errors and show them -->
+							<% obj.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<% end %>
+						</ul>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
