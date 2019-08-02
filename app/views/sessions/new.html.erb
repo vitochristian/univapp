@@ -1,0 +1,31 @@
+<!-- put the form inside a container -->
+<div class="container">
+	<!-- make the form center and inside a table -->
+	<div class="row center above">
+		<!-- for mobility in each devices use s m l small medium and large -->
+		<div class="col s12 m12 l12">
+			<!-- add a card panel as border to the form -->
+			<div class="card-panel">
+				<!-- @student.new_record ... means if it's a new record use SIGN UP else EDIT PROFILE -->
+				<h3> <%= "LOG IN" %></h3>
+				<div class="row">
+				<%= form_for(:login, html: {class: "col s12"}) do |f| %>
+					<div class="row">
+				        <div class="input-field col s12">
+							<%= f.email_field :email, placeholder: "Enter your email address", autofocus: true %>
+							<%= f.label :email %>
+						</div>
+					</div>
+					<div class="row">
+				        <div class="input-field col s12">
+							<%= f.password_field :password, placeholder: "Enter your password" %>
+							<%= f.label :password %>
+						</div>
+					</div>
+					<%= f.button '<i class="material-icons right">send</i>LOG IN'.html_safe,  :disable_with => "Logging in...", class: "btn-flat teal accent-4 waves-effect waves-light" %>
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
