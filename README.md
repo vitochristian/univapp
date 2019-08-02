@@ -11,26 +11,26 @@ Below, I have written the steps taken to build this app:
 1. Create new Rails project from the terminal:
 	* $rails new project_name
 2. Set the root route:
-  1. Open config -> route.rb
-  2. Type in root 'controller_name#action_name'
-  3. Open controller folder
-  4. Create controller file based on what has been written in the route
-  5. Type in: 
-	* class ControllersName < ApplicationController
-		* def action_name
+	1. Open config -> route.rb
+	2. Type in root 'controller_name#action_name'
+	3. Open controller folder
+	4. Create controller file based on what has been written in the route
+	5. Type in: 
+		* class ControllersName < ApplicationController
+			* def action_name
+			* end
 		* end
-	* end
-  6. Open view folder
-  7. Create a file based on the action_name (.html.erb)
+	6. Open view folder
+	7. Create a file based on the action_name (.html.erb)
 3. Save your work on github:
-  1. Open github on the browser
-  2. Create new repo
-  3. Type this in the terminal:
-	*	$ git init
-	*	$ git add -A
-	*	$ git commit -m "Type anything based on what your worked on"
-	*	$ git remote add origin git@github.com:github_username/projectname.git
-	*	$ git push -u origin master
+	1. Open github on the browser
+	2. Create new repo
+	3. Type this in the terminal:
+		* $ git init
+		* $ git add -A
+		* $ git commit -m "Type anything based on what your worked on"
+		* $ git remote add origin git@github.com:github_username/projectname.git
+		* $ git push -u origin master
  4. To start your server, type in: $ rails s
  5. Add new routes:
  	1. get 'pathname', to: 'controllername#action'
