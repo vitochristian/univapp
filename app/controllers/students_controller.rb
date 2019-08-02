@@ -49,7 +49,7 @@ class StudentsController < ApplicationController
 
 	# whitelist the student obj so it can be saved
 	def stud_params
-		# the parameters require obj student to exist and allowing name and email to be save to the obj later on
-		params.require(:student).permit(:name, :email)
+		# the parameters require obj student to exist and allowing all which are written to be save to the obj later on
+		params.require(:student).permit(:name, :email, :password, :password_confirmation)
 	end
 end

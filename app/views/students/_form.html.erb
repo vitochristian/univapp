@@ -16,19 +16,28 @@
 					<div class="row">
 				        <div class="input-field col s12">
 							<%= f.text_field :name, placeholder: (@student.new_record? ? "Enter your name" : "Update your name"), autofocus:true %>
-							<%= f.label :name, "Name" %>
+							<%= f.label :name %>
 						</div>
 					</div>
 					<div class="row">
 				        <div class="input-field col s12">
 							<%= f.email_field :email, placeholder: (@student.new_record? ? "Enter your email address" : "Update your email address") %>
-							<%= f.label :email, "Email" %>
+							<%= f.label :email %>
 						</div>
 					</div>
-					<div class="btn-flat teal accent-4 waves-effect waves-light">
-						<%= f.submit (@student.new_record? ? "SIGN UP" : "EDIT"), :disable_with => (@student.new_record? ? "Submitting..." : 'Editing...') %>
-						<i class="material-icons right">edit</i>
+					<div class="row">
+				        <div class="input-field col s12">
+							<%= f.password_field :password, placeholder: (@student.new_record? ? "Enter your password" : "Update your password") %>
+							<%= f.label :password, class: "active" %>
+						</div>
 					</div>
+					<div class="row">
+				        <div class="input-field col s12">
+							<%= f.password_field :password, placeholder: "Re-enter your password" %>
+							<%= f.label :password_confirmation, class: "active" %>
+						</div>
+					</div>
+					<%= f.button (@student.new_record? ? '<i class="material-icons right">send</i>SIGN UP'.html_safe : '<i class="material-icons right">edit</i>EDIT'.html_safe), :disable_with => (@student.new_record? ? "Submitting..." : 'Editing...'), class: "btn-flat teal accent-4 waves-effect waves-light" %>
 				<% end %>
 				</div>
 			</div>
